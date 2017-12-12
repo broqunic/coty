@@ -1,0 +1,16 @@
+tableau d'entrée :  tableau de caractere
+tableau de sortie : tableau de caractere à double entrée
+
+ligne sortie : entier
+colonne sortie : entier
+ligne sortie <- 0
+colonne sortie <- 0
+
+TantQue (i<taille du tableau d'entrée) faire
+	TantQue (tableau d'entrée[i] != '\0') faire
+		tableau sortie [ligne sortie][colonne sortie] <- tableau d'entrée[i]
+		colonne sortie <- colonne sortie +1
+	FinTQ
+	colonne sortie <- 0
+	ligne sortie <- ligne sortie +1
+FinTQ
