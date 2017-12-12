@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "prototypes.h"
+#include "prototypes.h"	
 
 int main()
 {
@@ -33,6 +33,30 @@ char[] ouvrirFichier(FILE *fichier) {
 
 }
 
+char[]][] SplitLine(char[] line, const char delimiter)
+{
+	char[][] result;
+	int count = 0;
+	
+	int lenght = ft_strlen(line);
+	int i;
+	int x = 0;
+	for (i=0; i < lenght; i++)
+    {
+        if (delimiter == line[i])
+        {
+            count++;
+			x = 0;
+        }
+		else
+		{
+			result[count][x] = line[i];
+			x++;
+		}
+    }
+	return result;
+}
+
 char[][] SplitFile(char[] fichierEntier)
 {
 	int lenght = ft_strlen(fichierEntier);
@@ -42,13 +66,14 @@ char[][] SplitFile(char[] fichierEntier)
 	int y = 0;
 	for( i=0; i < lenght; i++)
 	{
-		while (fichierEntier[i] != '\0')
-		{
+		if(fichierEntier[i] != '\0'){
 			tabSortie[x][y] = fichierEntier[i];
 			y++;
 		}
-		y = 0;
-		x++;
+		else{
+			y = 0;
+			x++;
+		}
 	}
 	return tabSortie;
 }
