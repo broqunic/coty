@@ -31,9 +31,10 @@ char[] ouvrirFichier(FILE *fichier) {
         fichierEntier += fgetc(fichier);
     } while (caraActuel != EOF);
 
+	return fichierEntier;
 }
 
-char[]][] SplitLine(char[] line, const char delimiter)
+char[][] SplitLine(char[] line, const char delimiter)
 {
 	char[][] result;
 	int count = 0;
